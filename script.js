@@ -20,7 +20,48 @@ var generatePassword = function (){
       break;
     }
   }
-}
+
+  window.alert ("Your password will be "+passwordLength+" characters long.");
+
+  passwordLength = parseInt(passwordLength);
+
+
+  do {
+    upper = window.confirm("Would you like upper case characters to be included?");
+    if (upper) {
+      window.alert("You have selected upper case characters to be included.");
+    }
+    else {
+      window.alert("You have NOT selected upper case characters to be included.");
+    }
+
+    lower = window.confirm("Would you like lower case characters to be included?");
+    if (lower) {
+      window.alert("You have seleceted lower case characters to be included.");
+    }
+    else {
+      window.alert("You have NOT selected lower case characters to be included");
+    }
+
+    numeric = window.confirm("Would you like numeric characters to be included?");
+    if (numeric) {
+      window.alert("You have selected to include numeric characters.");
+    }
+    else {
+      window.alert("You have NOT selected to include numeric characters.");
+    }
+
+    special = window.confirm("Would you like special characters to be included?")
+    if (special) {
+      window.alert("You have selected to include special character.")
+    }
+    else {
+      window.alert("You have NOT selected to include special characters.")
+    }
+
+  } while ((upper == false) && (lower == false) && (numeric == false) && (special == false));
+    
+  }
 
 // Write password to the #password input
 function writePassword() {
