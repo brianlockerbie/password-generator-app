@@ -11,7 +11,7 @@ var numeric = false;
 
 var generatePassword = function (){
 
-  window.alert("Please select one or more of the following character traits (Uppercase, Lowercase, Numeric & || Special) to complete a generated password.")
+  window.alert("Please select one or more of the following character traits (Uppercase, Lowercase, Numeric &/or Special) to complete a generated password.")
 
   var passwordLength = window.prompt("Please enter a password containing 8 to 128 characters");
   while ((Number.isInteger(parseInt(passwordLength))=== false) || (passwordLength < 8) || (passwordLength > 128)) {
@@ -57,6 +57,10 @@ var generatePassword = function (){
     }
     else {
       window.alert("You have NOT selected to include special characters.")
+    }
+
+    if ((upper == false) && (lower == false) && (numeric == false) && (special == false)){
+      window.alert("You have not selected any options. Please return to page & try again. Minimum of one selection needed.")
     }
 
   } while ((upper == false) && (lower == false) && (numeric == false) && (special == false));
