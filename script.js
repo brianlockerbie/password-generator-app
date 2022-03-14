@@ -1,6 +1,5 @@
 // Assignment code here
 
-// Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 var passwordLength = "";
@@ -10,9 +9,11 @@ var special = false;
 var numeric = false;
 
 var generatePassword = function (){
-
+  
+  // User alert with instructions
   window.alert("Please select one or more of the following character traits (Uppercase, Lowercase, Numeric &/or Special) to complete a generated password.")
-
+  
+  // User input prompt to answer question
   var passwordLength = window.prompt("Please enter a password containing 8 to 128 characters");
   while ((Number.isInteger(parseInt(passwordLength))=== false) || (passwordLength < 8) || (passwordLength > 128)) {
     passwordLength = window.prompt("Password length you have enered is invalid. Please select a number between 8 and 128");
@@ -21,12 +22,14 @@ var generatePassword = function (){
     }
   }
 
+  // Confirming users selected input
   window.alert ("Your password will be "+passwordLength+" characters long.");
 
   passwordLength = parseInt(passwordLength);
 
 
   do {
+    // Upper case option
     upper = window.confirm("Would you like upper case characters to be included?");
     if (upper) {
       window.alert("You have selected upper case characters to be included.");
@@ -34,7 +37,8 @@ var generatePassword = function (){
     else {
       window.alert("You have NOT selected upper case characters to be included.");
     }
-
+    
+    // Lower case option
     lower = window.confirm("Would you like lower case characters to be included?");
     if (lower) {
       window.alert("You have seleceted lower case characters to be included.");
@@ -42,7 +46,8 @@ var generatePassword = function (){
     else {
       window.alert("You have NOT selected lower case characters to be included");
     }
-
+    
+    // Numeric option
     numeric = window.confirm("Would you like numeric characters to be included?");
     if (numeric) {
       window.alert("You have selected to include numeric characters.");
@@ -50,7 +55,8 @@ var generatePassword = function (){
     else {
       window.alert("You have NOT selected to include numeric characters.");
     }
-
+    
+    // Special option
     special = window.confirm("Would you like special characters to be included?")
     if (special) {
       window.alert("You have selected to include special character.")
@@ -66,7 +72,7 @@ var generatePassword = function (){
   } while ((upper == false) && (lower == false) && (numeric == false) && (special == false));
 
 
-  //Password Generation
+  // Password generation
   var actualCharOptions = "";
   var inputList = [upper, lower, numeric, special];
   var possibleCharOptions = ["ABCDEFGHIJKLMNOPQRSTUVYXYZ", "abcdefghijklmnopqrstuvwxyz", "0123456789", "~`!@#$%^&*()_-+={}[]|:;/\"\'\\<>,.?"];
@@ -77,7 +83,7 @@ var generatePassword = function (){
       actualCharOptions = actualCharOptions + possibleCharOptions[i];
     }
   }
-
+  // Generates password
   for (let i=0; i<(passwordLength-1); i++) {
     result += actualCharOptions.charAt(Math.floor(Math.random() * actualCharOptions.length));
   }
