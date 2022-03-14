@@ -60,8 +60,26 @@ var generatePassword = function (){
     }
 
   } while ((upper == false) && (lower == false) && (numeric == false) && (special == false));
-    
+
+
+  //Password Generation
+  var actualCharOptions = "";
+  var inputList = [upper, lower, numeric, special];
+  var possibleCharOptions = ["ABCDEFGHIJKLMNOPQRSTUVYXYZ", "abcdefghijklmnopqrstuvwxyz", "0123456789", "~`!@#$%^&*()_-+={}[]|:;/\"\'\\<>,.?"];
+  var result = "";
+
+  for (let i=0; i<4; i++) {
+    if (inputList[i]) {
+      actualCharOptions = actualCharOptions + possibleCharOptions[i];
+    }
   }
+
+  for (let i=0; i<(passwordLength-1); i++) {
+    result += actualCharOptions.charAt(Math.floor(Math.random() * actualCharOptions.length));
+  }
+  
+return result;    
+}
 
 // Write password to the #password input
 function writePassword() {
