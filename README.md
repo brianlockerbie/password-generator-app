@@ -5,4 +5,4 @@
 
 
 <p><b>Screenshot:</b></p>
-<img src="./assets/images/password.png">
+<p align="center"><img src="./assets/images/password.png"></p>
