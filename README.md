@@ -47,7 +47,7 @@ Live link [here](https://brianlockerbie.github.io/password-generator-app/)
 
 
 ## Screenshot
-<img src="./assets/images/password.png">
+<img src="./assets/images/workImg6.png">
 
 ## License
 
