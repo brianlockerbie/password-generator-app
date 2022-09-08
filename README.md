@@ -7,7 +7,7 @@ I created an application that an employee can use to generate a random password 
 ## Technologies
 - HTML
 - CSS
-- Javacript
+- JavaScript
 
 ## Table of Contents
 
